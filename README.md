@@ -23,5 +23,10 @@ To check if it is up to date:
 
     $ py -m pip install -U pip
 
-Si
--------------------
+Installation of pytube
+======================
+
+To install pytube, run the following command in your terminal
+
+    $ pip install pytube
+
