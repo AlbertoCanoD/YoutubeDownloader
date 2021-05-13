@@ -15,6 +15,13 @@ Once installed, pip, which is the Python package and installation manager, is in
 
     $ py --version
 
+To check that pip is installed, use the following command:
+
+    $ py -m pip --version
+    
+To check if it is up to date:
+
+    $ py -m pip install -U pip
 
 Si
 -------------------
