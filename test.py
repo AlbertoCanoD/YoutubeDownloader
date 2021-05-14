@@ -1,21 +1,19 @@
 #Import pytube
-#Importamos pytube
 from pytube import YouTube
 
-#Introducimos el link
 #Enter the link
 link = input("Link del video: ")
+
+#yt is a object of YouTube class
 yt = YouTube(link)
 
-print("Titulo: ", yt.title, "\nDuracion: ", yt.length, " segundos", "\nCanal: ", yt.author)
-#We show all possible download options
-#Mostramos todas las opciones de descarga posible
-#videos = yt.streams.all()
-#videos = yt.streams.filter(progressive=True)
-#videos = yt.streams.filter(only_audio=True)
+#Try to get the title, lenght and author of the video
+#Intentamos obtener el titulo, longitud y autor del video
+try:
+    print("Titulo: ", yt.title, "\nDuracion: ", yt.length, " segundos", "\nCanal: ", yt.author)
+except:
+    print("Intentelo de nuevo, revise el link.")
 
-#Download options with their lists
-#Opciones de descarga con sus listas
 
 #Video and audio
 try:
