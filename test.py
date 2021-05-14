@@ -18,12 +18,19 @@ print("Titulo: ", yt.title, "\nDuracion: ", yt.length, " segundos", "\nCanal: ",
 #Opciones de descarga con sus listas
 
 #Video and audio
-videoAudio = yt.streams.filter(progressive=True)
-listVidAud = list(enumerate(videoAudio))
+try:
+    videoAudio = yt.streams.filter(progressive=True)
+    listVidAud = list(enumerate(videoAudio))
+    #break# print("Pistas de Video y Audio")
+except:
+    print("No hay pistas de Video y Audio")
 
 #Only audio
-audio = yt.streams.filter(only_audio=True)
-listAud = list(enumerate(audio, 1))
+try:
+    audio = yt.streams.filter(only_audio=True)
+    listAud = list(enumerate(audio, 1))
+except:
+    print("No hay pistas de Audio")
 
 #Format of list
 #Formato de la lista
@@ -34,14 +41,20 @@ list1 = list(enumerate(allVA.filter(progressive=True)))
 list1.index
 
 
-#List union 
-listVidAud.extend(listAud)
+
+
+print("Video y Audio")
 
 for a in listVidAud:
     print(a)
 
-for i in listAllVA:
+print("Audio")
+
+for i in listAud:
    print(i)
+
+#List union 
+listVidAud.extend(listAud)
 
 print("Elige el formato deseado")
 dn_option = int(input("Opcion: "))
@@ -58,3 +71,5 @@ except:
 #if dn_video.download():
  #   print("Descarga correcta")
 #print("Error en la descarga")
+
+#https://www.youtube.com/watch?v=vOL40lrhE6U
