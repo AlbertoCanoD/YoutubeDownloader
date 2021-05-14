@@ -7,6 +7,7 @@ from pytube import YouTube
 link = input("Link del video: ")
 yt = YouTube(link)
 
+print("Titulo: ", yt.title, "\nDuracion: ", yt.length, " segundos", "\nCanal: ", yt.author)
 #We show all possible download options
 #Mostramos todas las opciones de descarga posible
 #videos = yt.streams.all()
@@ -27,24 +28,17 @@ listAud = list(enumerate(audio, 1))
 #Format of list
 #Formato de la lista
 allVA = yt.streams.filter(progressive=True, only_audio=True)
-listAllVA = list(enumerate(allVA))
+listAllVA = list(enumerate(allVA.filter()))
+
+list1 = list(enumerate(allVA.filter(progressive=True)))
+list1.index
+
 
 #List union 
-#listVidAud.extend(listAud)
+listVidAud.extend(listAud)
 
-#for i in listAllVA:
- #   print(i)
-#Print video results
-#Imprimir los resultados de videos
-print("Video y audio")
-for i in listVidAud:
-    print(i)
-
-#Print video results
-#Imprimir los resultados de videos
-print("Audio")
-for i in listAud:
-   print(i)
+for a in listVidAud:
+    print(a)
 
 for i in listAllVA:
    print(i)
