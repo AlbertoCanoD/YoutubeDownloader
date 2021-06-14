@@ -14,24 +14,32 @@ try:
 except:
     print("Intentelo de nuevo, revise el link.")
 
+audio = yt.streams.filter(only_audio=True)
+    #List of audio streams
+audioStreams = list(enumerate(audio))
+
+print("\nAudio")
+for a in audioStreams:
+   print(a)
+
 #Only audio
 try:
     audio = yt.streams.filter(only_audio=True)
     #List of audio streams
-    listAud = list(enumerate(audio))
+    audioStreams = list(enumerate(audio))
 except:
     print("No hay pistas de Audio")
 
 #Print the list of audio
 print("\nAudio")
-for a in listAud:
+for a in audioStreams:
    print(a)
 
 #https://www.youtube.com/watch?v=vOL40lrhE6U
 
 print("\nElige el formato deseado")
 opcion = int(input("Opcion: "))
-descarga = listAud[opcion]
+descarga = audioStreams[opcion]
 #print(descarga)
 #descarga.download()
 #listVidAud.extend(listAud)
