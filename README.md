@@ -4,7 +4,12 @@ A simple program developed in Python that will allow us to download videos/audio
 Installation requirements
 ======================
 
-In order to run the program, it will be necessary to have a Python version equal or higher than 3.6. In addition to this, you will need to have pip installed.
+In order to run the program, it will be necessary to have a Python version equal or higher than 3.6. In addition to this, you will need to have pip installed. And also you need to install the library pytube.
+
+About pytube
+======================
+
+pytube is a lightweight, Pythonic, dependency-free, library (and command-line utility) for downloading YouTube Videos. You can find documentation at https://pytube.io/en/latest/index.html
 
 Installation of python and pip
 ======================
@@ -22,6 +27,10 @@ To check that pip is installed, use the following command:
 To check if it is up to date:
 
     $ py -m pip install -U pip
+    
+To update pip:
+
+    $ py -m pip install --upgrade pip
 
 Installation of pytube
 ======================
