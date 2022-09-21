@@ -1,22 +1,18 @@
 #Import pytube
-#Importamos pytube
 from pytube import YouTube
 
-#Introducimos el link
 #Enter the link
 link = input("Link del video: ")
 yt = YouTube(link)
 
-#We show all possible download options
-#Mostramos todas las opciones de descarga posible
+#Store all possible download options
 videos = yt.streams.all()
 
-#Download options with their lists
+#List Download options
 #Opciones de descarga con sus listas
 listVid = list(enumerate(videos))
 
-#Print video results
-#Imprimir los resultados
+#Print the resuls
 for i in listVid:
     print(i)
 
@@ -24,8 +20,7 @@ print("Elige el formato deseado")
 opcion = int(input("Opcion: "))
 descarga = listVid[opcion]
 
-#To download
-#Para descargar
+#Download
 try:
     descarga.download()
     print("Descarga correcta")
