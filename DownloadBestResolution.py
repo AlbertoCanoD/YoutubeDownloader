@@ -8,6 +8,7 @@ def progress_func(stream, chunk, bytes_remaining):
     sys.stdout.write("\r[{}{}] ".format('=' * done, ' ' * (50-done)))
     sys.stdout.flush()
 
+def bar(stream, chunk, bytesremaining)
 
 # Ask for the link from user
 link = input("Enter the link of YouTube video you want to download: ")
@@ -15,7 +16,7 @@ yt = YouTube(link, on_progress_callback=progress_func)
 
 blue = '\033[38;2;173;216;230m'  # Hex ADD8E6
 red = '\033[38;2;255;105;97m'  # Hex FF6961
-reset_color = '\033[39m'
+reset = '\033[39m'  # Reset terminal color
 
 print(blue + "Title: ", yt.title)
 print("Number of views: ", yt.views)
@@ -28,6 +29,6 @@ ys = yt.streams.get_highest_resolution()
 # Downloading
 print("Downloading video...")
 if ys.download():
-    print("\nDownload completed!!" + reset_color)
+    print("\nDownload completed!!" + reset)
 else:
-    print("\nDownload error." + reset_color)
+    print("\nDownload error." + reset)
