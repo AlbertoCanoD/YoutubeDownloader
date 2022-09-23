@@ -27,10 +27,6 @@ To check that pip is installed, use the following command:
 To check if it is up to date:
 
     $ py -m pip install -U pip
-    
-To update pip:
-
-    $ py -m pip install --upgrade pip
 
 Installation of pytube
 ======================
