@@ -20,8 +20,6 @@ blue = '\033[38;2;173;216;230m'  # Hex ADD8E6
 red = '\033[38;2;255;105;97m'  # Hex FF6961
 reset = '\033[39m'  # Reset terminal color
 
-exceptions
-
 try:
     yt = YouTube(link)
 
@@ -34,10 +32,12 @@ except exceptions.VideoUnavailable as e:
 else:
     print(blue + "Title: ", yt.title, "\nChannel: ", yt.author,  "\nLength: ",
           yt.length, "s", "\nViews: ", yt.views)
+    print(red + "Selecting the highest resolution.")
+
     try:
         # Getting the highest resolution possible
-        print(red + "Selecting the highest resolution.")
         video = yt.streams.get_highest_resolution()
+
     except exceptions.HTMLParseError as e:
         print(e)
 
