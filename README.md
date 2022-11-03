@@ -34,3 +34,8 @@ Installation of pytube
 To install pytube, run the following command in your terminal
 
     $ pip install pytube
+
+
+GUI
+======================
+Work in progress...
