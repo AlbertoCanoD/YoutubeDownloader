@@ -5,7 +5,6 @@ from progress_bar import progress_function
 
 # Ask for the link
 link = input("Enter the link of YouTube video you want to download: ")
-#link = "https://www.youtube.com/watch?v=Zyet1YI2Sl0"
 yt = YouTube(link, on_progress_callback=progress_function)
 
 blue = '\033[38;2;173;216;230m'  # Hex ADD8E6

@@ -1,53 +1,31 @@
-import sys
 from pytube import YouTube
-
-
-def progress_func(stream, chunk, bytes_remaining):
-    # Size of video
-    size = stream.filesize
-    curr = size - bytes_remaining
-    done = int(50 * curr / size)
-    sys.stdout.write("\r[{}{}] ".format('=' * done, ' ' * (50-done)))
-    sys.stdout.flush()
+from progress_bar import progress_function
 
 
 # Ask for the link
-link = input("Link del video: ")
-yt = YouTube(link, on_progress_callback=progress_func)
+#link = input("Enter the link of YouTube audio you want to download: ")
+link = "https://www.youtube.com/watch?v=uVl9C3d7ySY"
+yt = YouTube(link, on_progress_callback=progress_function)
+
+blue = '\033[38;2;173;216;230m'  # Hex ADD8E6
+red = '\033[38;2;255;105;97m'  # Hex FF6961
+reset = '\033[39m'  # Reset terminal color
+
+print(blue + "Title: ", yt.title, "\nChannel: ", yt.author,  "\nLength: ",
+      yt.length, "s", "\nViews: ", yt.views)
+print(red + "\nSelect the audio stream.\n↳" + reset)
 
 try:
-    print("\nTitulo: ", yt.title, "\nDuracion: ",
-          yt.length, " segundos", "\nCanal: ", yt.author)
+    audio_filter = yt.streams.filter(only_audio=True)  # Filter only audio streams
+    audio_streams = list(enumerate(audio_filter))  # List of audio streams
 except:
-    print("Intentelo de nuevo, revise el link.")
+    print("Audio streams not found")
 
-#Filter only audio streams
-audio = yt.streams.filter(only_audio=True)
-# List of audio streams
-audioStreams = list(enumerate(audio))
+for audio_stream in audio_streams: # Printing all audio streams
+    print(audio_stream)
 
-print("\nAudio")
-for a in audioStreams:
-    print(a)
-
-# Only audio
-try:
-    audio = yt.streams.filter(only_audio=True)
-    # List of audio streams
-    audioStreams = list(enumerate(audio))
-except:
-    print("No hay pistas de Audio")
-
-# Print the list of audio
-print("\nAudio")
-for a in audioStreams:
-    print(a)
-
-# https://www.youtube.com/watch?v=vOL40lrhE6U
-
-print("\nElige el formato deseado")
-opcion = int(input("Opcion: "))
-descarga = audioStreams[opcion]
+option = int(input("\nSelect the desired stream: "))
+download = audio_streams[option]
 # print(descarga)
 # descarga.download()
 # listVidAud.extend(listAud)
@@ -68,5 +46,3 @@ descarga = audioStreams[opcion]
 # if dn_video.download():
 #   print("Descarga correcta")
 #print("Error en la descarga")
-
-# https://www.youtube.com/watch?v=vOL40lrhE6U
