@@ -1,11 +1,24 @@
-def darkmode()
 
-def download_media(url, filename, audioOnly)
 
-def checkquality()
+def darkmode():
+    return None
 
-def startdownload()
 
-def toggle_download()
+def download_media(url, filename, audioOnly):
+    return None
 
-def cancel_download()
+
+def checkquality():
+    return None
+
+
+def startdownload():
+    return None
+
+
+def toggle_download():
+    return None
+
+
+def cancel_download():
+    return None

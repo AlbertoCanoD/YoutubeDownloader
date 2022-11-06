@@ -4,8 +4,7 @@ from progress_bar import progress_function
 
 
 # Ask for the link
-#link = input("Enter the link of YouTube audio you want to download: ")
-link = "https://www.youtube.com/watch?v=uVl9C3d7ySY"
+link = input("Enter the link of YouTube video you want to download: ")
 yt = YouTube(link, on_progress_callback=progress_function)
 
 blue = '\033[38;2;173;216;230m'  # Hex ADD8E6
@@ -14,32 +13,11 @@ reset = '\033[39m'  # Reset terminal color
 
 print(blue + "Title: ", yt.title, "\nChannel: ", yt.author,  "\nLength: ",
       yt.length, "s", "\nViews: ", yt.views)
-print(red + "\nSelect the audio stream.\n↳" + reset)
+print(red + "Selecting the highest bitrate.")
 
-try:
-    # Filter only audio streams
-    audio_filter = yt.streams.filter(only_audio=True)
-    audio_streams = list(enumerate(audio_filter))
-except:
-    print("Audio streams not found")
+audio = yt.streams.get_audio_only()
 
-for audio_stream in audio_streams:  # Print all audio streams
-    print(audio_stream)
-
-option = int(input("\nSelect the desired stream: "))
-selected_stream = str(audio_streams[option])
-
-print("Selected stream -> " + selected_stream)
-
-audio = yt.streams.get_by_itag(selected_stream)
-
-'''
-TODO
-Get the itag of selected stream
-Download by itag
-'''
-
-print("Downloading video...")
+print("Downloading audio...")
 if platform.system() == "Linux":
     if audio.download('~/YoutubeDownloads'):
         print("\nDownload completed!!" + reset)

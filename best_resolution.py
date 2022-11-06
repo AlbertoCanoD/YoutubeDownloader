@@ -23,7 +23,7 @@ if platform.system() == "Linux":
         print("\nDownload completed!!" + reset)
     else:
         print("\nDownload error." + reset)
-else:
+elif platform.system() == "Windows":
     if video.download('/YoutubeDownloads'):
         print("\nDownload completed!!" + reset)
     else:
