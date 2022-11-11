@@ -77,8 +77,16 @@ To install pytube, run the following command in your terminal
 
 TODO
 ======================
-- Download best video quality ✅
-- Implement youtube exceptions 
-- Option selector for video quality or format
-- Audio downloader
-- GUI --> Select folder to save, paste an download in a box, option selector, ...
+
+- CLI
+    - ~~Download best video quality~~ ✅
+    - ~~Download best audio quality~~ ✅
+    - Implement youtube exceptions 
+    - Option selector for video quality or format
+- GUI
+    - Paste in box with click on icon
+    - Options menu
+        - Select folder to save audio
+        - Select folder to save video
+        - Select darkmode 
+    - Select format and quality for video or audio
