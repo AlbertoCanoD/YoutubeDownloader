@@ -79,8 +79,8 @@ TODO
 ======================
 
 - CLI
-    - ~~Download best video quality~~ ✅
-    - ~~Download best audio quality~~ ✅
+    - Download best video quality ✅
+    - Download best audio quality ✅
     - Implement youtube exceptions 
     - Option selector for video quality or format
 - GUI
