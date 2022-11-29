@@ -1,9 +1,0 @@
-
-*.mp4
-link.txt
-*.webm
-*.mp3
-.vscode
-downloads
-__pycache__
-test_files
