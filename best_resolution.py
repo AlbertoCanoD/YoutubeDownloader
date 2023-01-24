@@ -1,7 +1,6 @@
 import platform
 from pytube import YouTube
-from progress_bar import progress_function
-
+from utils import progress_function
 
 # Ask for the link
 link = input("Enter the link of YouTube video you want to download: ")
@@ -20,7 +19,7 @@ video = yt.streams.get_highest_resolution()
 print("Downloading video...")
 if platform.system() == "Linux":
     if video.download('~/YoutubeDownloads'):
-        print("\nDownload completed!!" + reset)
+        print("\nDownload completed, file stored in ~/YoutubeDownloads!!" + reset)
     else:
         print("\nDownload error." + reset)
 elif platform.system() == "Windows":

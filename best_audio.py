@@ -1,6 +1,6 @@
 import platform
 from pytube import YouTube
-from progress_bar import progress_function
+from utils import progress_function
 
 
 # Ask for the link

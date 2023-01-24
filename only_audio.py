@@ -1,6 +1,6 @@
 import platform
 from pytube import YouTube
-from useful_functions import progress_function, colors
+from utils import progress_function, colors
 
 
 # Ask for the link
